@@ -2,7 +2,7 @@ const TMDB_ENDPOINT = 'https://api.themoviedb.org/3';
 const APIKEY = '64d059568c0e31389b9b682b5aa95e3f';
 const IMG_PREFIX = 'https://image.tmdb.org/t/p/w500';
 const GNDB_ENDPOINT = 'https://gnews.io/api/v4/top-headlines';
-const KEY_GNDB = 'b683c68c7aa7796c2e5733512b68bec0';
+const KEY_GNDB = '1d138f06f337533679ac493a0b91ce98';
 
 $(() => {
 
