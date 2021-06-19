@@ -1,6 +1,8 @@
 const TMDB_ENDPOINT = 'https://api.themoviedb.org/3';
 const APIKEY = '64d059568c0e31389b9b682b5aa95e3f';
 const IMG_PREFIX = 'https://image.tmdb.org/t/p/w500';
+const GNDB_ENDPOINT = 'https://gnews.io/api/v4/top-headlines';
+const KEY = 'b683c68c7aa7796c2e5733512b68bec0';
 
 $(() => {
 
@@ -16,7 +18,7 @@ $(() => {
                 <div class="card-body">
                     <h5 class="card-title">${nomeFilme}</h5>
                     <p>Data de Lançamento: ${lancamento}</p>
-                    <p>Nota: ${nota}</p>
+                    <p>Nota: ${nota} <i class="fas fa-star"></i></p>
                     <a href="https://www.themoviedb.org/movie/${data.results[i].id}" class="btn btn-primary">Saiba Mais</a>
                 </div>
             </div>`);
@@ -78,5 +80,29 @@ $(() => {
             }
         }
     })
+
+    $.get(GNDB_ENDPOINT + '?country=br' + '&q=omelete' + '&token=' + KEY).then((data) => {
+        console.log(data);
+        $("#materias").html("");
+        for (let i = 0; i < 3; i++)
+        {
+            let titulo = data.articles[i].title;
+            let descricao = data.articles[i].description;
+            let imagem = data.articles[i].image;
+            let link = data.articles[i].url;
+            $("#materias").append(`
+            <div class="row materias">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-4">
+                    <img class="imagens_novidades" src="${imagem}" alt="">
+                </div>
+                <div class="col-12 col-sm-12 col-md-12 col-lg-8 texto_materia">
+                    <h2>${titulo}</h2>
+                    <p>${descricao}</p>
+                    <a href="${link}" class="btn btn-primary">Saiba Mais</a>
+                </div>
+            </div>`);
+        }
+    })
+
 })
 
