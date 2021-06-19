@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="styles.css">
     <script src="./scripts/index.js"></script>
     <script src="./scripts/pesquisa.js"></script>
+    <script src="./scripts/botoes.js"></script>
 </head>
 
 <body>
@@ -38,7 +39,13 @@
                                 <a class="nav-link" href="#bemAvaliados">Aclamados pela crítica</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#emDestaque">Em destque</a>
+                                <a class="nav-link" href="#emDestaque">Em destaque</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#trailers">Trailers</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#novidades">Novidades</a>
                             </li>
                         </ul>
                         <form class="form-inline my-2 my-lg-0">
@@ -96,8 +103,8 @@
     
             </div>
             <!--Botão carregar mais em destaque-->
-            <div class="botao_fim_destaque">
-                <button type="button" class="btn btn-primary btn-lg">+ Carregar mais</button>
+            <div class="botao_fim_destaque" id="botaoDestaque">
+                <button type="button" class="btn btn-primary btn-lg" onclick="carregaMais()">+ Carregar mais</button>
             </div>
             </div>
             <!--Fim cards em destaque-->
@@ -105,9 +112,9 @@
             </div>
         </article>
         <article class="container-fluid entrevistas">
-            <div class="row entrevistas_titulo">
+            <div class="row entrevistas_titulo" id="trailers">
                 <div class="col-12">
-                    <h1>Entrevistas e making offs</h1>
+                    <h1>Trailers</h1>
                     <!--Título entrevistas e making offs-->
                 </div>
             </div>
@@ -171,7 +178,7 @@
             <div class="row">
                 <div class="col-12 col-sm-12 col-md-12 col-lg-8">
                     <div class="row">
-                        <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-12" id="novidades"> 
                             <h1>Novidades</h1>
                         </div>
                     </div>
