@@ -25,7 +25,7 @@ $(() => {
         }
     })
 
-    $.get(TMDB_ENDPOINT + '/tv/top_rated' + '?api_key=' + APIKEY).then((data) => {
+    $.get(TMDB_ENDPOINT + '/tv/popular' + '?api_key=' + APIKEY).then((data) => {
         $("#boxDentroDoCarrossel").html("");
         for (let i = 1; i < 4; i++) 
         {
