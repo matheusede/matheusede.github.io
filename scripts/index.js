@@ -25,18 +25,18 @@ $(() => {
         }
     })
 
-    $.get(TMDB_ENDPOINT + '/tv/top_rated' + '?api_key=' + APIKEY).then((data) => {
+    $.get(TMDB_ENDPOINT + '/movie/now_playing' + '?api_key=' + APIKEY).then((data) => {
         $("#boxDentroDoCarrossel").html("");
-        for (let i = 1; i < 4; i++) 
+        for (let i = 0; i < 3; i++) 
         {
-            let nomeFilme = data.results[i].name;
-            let lancamento = data.results[i].first_air_date;
+            let nomeFilme = data.results[i].title;
+            let lancamento = data.results[i].release_date;
             let nota = data.results[i].vote_average;
             let id = data.results[i].id;
             let sinopese = data.results[i].overview; 
             if(i == 1)
             {
-                $.get(TMDB_ENDPOINT + '/tv/' + id + '/videos' + '?api_key=' + APIKEY).then((video) => {
+                $.get(TMDB_ENDPOINT + '/movie/' + id + '/videos' + '?api_key=' + APIKEY).then((video) => {
                     let keyVideo = video.results[0].key;
                     $("#boxDentroDoCarrossel").append(`
                     <div class="carousel-item active">
